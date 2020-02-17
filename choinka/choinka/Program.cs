@@ -1,4 +1,4 @@
-﻿using System; 
+﻿using System;
 
 public class Example
 {
@@ -7,7 +7,7 @@ public class Example
         string userInput;
         Console.WriteLine("Jak wysoka ma być choinka?");
         userInput = Console.ReadLine();
-        bool isNumber = int.TryParse(userInput, out var high); 
+        bool isNumber = int.TryParse(userInput, out var high);
         if (isNumber == false)
         {
             Console.WriteLine("Nie sciemaniaj, podaj liczbę");
@@ -16,8 +16,11 @@ public class Example
         {
             for (int i = 0; i < high; i++)
             {
-                Console.WriteLine("*");
+                string ile = new string('*', i+1);
+                string spacja = new string(' ', high);
+                Console.WriteLine(spacja+ile);
             }
         }
+        Console.ReadKey();
     }
 }
