@@ -19,7 +19,10 @@ public class Example
                 string ile = new string('*', i+1);
                 int spacja = (high - i);
                 string move = new string(' ', spacja);
-                Console.WriteLine(move + ile);
+
+                int right = i;
+                string newright = new string('*', right);
+                Console.WriteLine(move + ile + newright);
             }
         }
         Console.ReadKey();
