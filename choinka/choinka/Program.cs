@@ -17,8 +17,9 @@ public class Example
             for (int i = 0; i < high; i++)
             {
                 string ile = new string('*', i+1);
-                string spacja = new string(' ', high);
-                Console.WriteLine(spacja+ile);
+                int spacja = (high - i);
+                string move = new string(' ', spacja);
+                Console.WriteLine(move + ile);
             }
         }
         Console.ReadKey();
