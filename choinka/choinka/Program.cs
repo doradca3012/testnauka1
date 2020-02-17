@@ -7,7 +7,8 @@ public class Example
         string userInput;
         Console.WriteLine("Jakigo znaku chcesz użyć do rysowania choinki?");
         char sign;
-        sign = char.Parse(Console.ReadLine());
+        sign = Console.ReadKey().KeyChar;
+        Console.WriteLine();
         Console.WriteLine("Jak wysoka ma być choinka?");
         userInput = Console.ReadLine();
         bool isNumber = int.TryParse(userInput, out var high);
