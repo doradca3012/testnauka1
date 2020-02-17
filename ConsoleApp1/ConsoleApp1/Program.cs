@@ -1,4 +1,4 @@
-﻿using System;
+﻿using System; 
 
 public class Example
 {
@@ -6,18 +6,11 @@ public class Example
     {
         
         Console.WriteLine("Jak wysoka ma być choinka:");
-        do
-        {
-            string input = Console.ReadLine();
-            int tree; 
-            bool high = int.TryParse(Console.ReadLine, out tree);
-            
-            
-            for (tree = 1; tree < 10; tree++)
+        bool high = int.TryParse(Console.ReadLine, out int tree);  
+            for (int i = 0; i = int.Parse(tree); i++)
             {
-                Console.WriteLine(tree);
+                Console.WriteLine('*');
             }
             //test
-        } while (tree != 0);
     }
 }
