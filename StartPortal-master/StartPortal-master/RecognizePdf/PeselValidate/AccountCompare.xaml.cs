@@ -138,7 +138,7 @@ namespace PeselValidate
 
                 if (!HasSingleTextControl)
                 {
-                    sb.AppendLine($"'Zestawienie opłat i odsetek' znaleziono ({TextControlCount} razy)");
+                    sb.AppendLine($"'Wszystkie kwoty w PLN' znaleziono ({TextControlCount} razy)");
                 }
 
                 return sb.ToString();
@@ -156,7 +156,7 @@ namespace PeselValidate
             {
                 if (!HasSingleTextControl)
                 {
-                    return $"'Zestawienie opłat i odsetek' znaleziono ({TextControlCount} razy)";
+                    return $"'Wszystkie kwoty w PLN' znaleziono ({TextControlCount} razy)";
                 }
 
                 return string.Empty;
@@ -324,7 +324,7 @@ namespace PeselValidate
                            .Where(p => p > 0)
                            .ToArray();
                         var prefixFind = "Prowadzonego dla:";
-                        var singleText = "Zestawienie opłat i odsetek";
+                        var singleText = "Wszystkie kwoty w PLN";
 
                         item.ForClientCount = CountText(clientPages, prefixFind);
                         item.ForThisClientCount = CountText(clientPages, $"Prowadzonego dla: {item.ClientName}");
@@ -358,7 +358,7 @@ namespace PeselValidate
                     }
                     else
                     {
-                        var singleText = "Zestawienie opłat i odsetek";
+                        var singleText = "Wszystkie kwoty w PLN";
 
                         item.TextControlCount = CountText(clientPages, singleText);
                     }
