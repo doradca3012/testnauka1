@@ -1,0 +1,18 @@
+﻿<Window x:Class="PresentValidator.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PresentValidator"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <GroupBox Header="Pesele" Height="128" VerticalAlignment="Top" Margin="0,41,0,0">
+            <TextBox Margin="10,0,8,0" TextWrapping="Wrap" FontSize="22" FontWeight="Bold" BorderBrush="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}"/>
+        </GroupBox>
+        <Menu x:Name="MainMenu" Margin="0,0,0,398">
+            <MenuItem Header="Wczytaj plik" Click="MenuItem_Click" />
+        </Menu>
+
+    </Grid>
+</Window>

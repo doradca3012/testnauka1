@@ -1,0 +1,19 @@
+﻿<Window x:Class="PeselValidate.SelectWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PeselValidate"
+        mc:Ignorable="d"
+        Title="Wybierz aplikację" Height="240" Width="455" Icon="/icon.ico">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50*" />
+            <RowDefinition Height="50*" />
+            <RowDefinition Height="50*" />
+        </Grid.RowDefinitions>
+        <Button Grid.Row="0" Click="Button_Click">Skanowanie PESEL</Button>
+        <Button Grid.Row="1" Click="Button_Click_1">Zestawienie opłat - cykliczne</Button>
+        <Button Grid.Row="2" Click="Button_Click_2">Wyciągi tymczasowe</Button>
+    </Grid>
+</Window>

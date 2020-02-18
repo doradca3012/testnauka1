@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "RecognizePdf": {
+      "commandName": "Project",
+      "commandLineArgs": "-f D:/inv.pdf --search=8121815283"
+    }
+  }
+}
