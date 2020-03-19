@@ -1,34 +1,82 @@
 ﻿using System;
+using System.Collections.Generic;
 
 public class Example
 {
     public static void Main()
     {
-        string userInput;
-        Console.WriteLine("Jakigo znaku chcesz użyć do rysowania choinki?");
-        char sign;
-        sign = Console.ReadKey().KeyChar;
-        Console.WriteLine();
-        Console.WriteLine("Jak wysoka ma być choinka?");
-        userInput = Console.ReadLine();
-        bool isNumber = int.TryParse(userInput, out var high);
-        if (isNumber == false)
-        {
-            Console.WriteLine("Nie sciemaniaj, podaj liczbę");
-        }
-        else
-        {
-            for (int i = 0; i < high; i++)
-            {
-                string ile = new string(sign, i+1);
-                int spacja = (high - i);
-                string move = new string(' ', spacja);
+        var treeList = new List<ChristmasTree> {
+            // new StaticCharChristmasTree('@'),
+            // new StaticCharChristmasTree('$'),
+            new ChristmasTree()
+    };
 
-                int right = i;
-                string newright = new string(sign, right);
-                Console.WriteLine(move + ile + newright);
-            }
+        foreach(var tree in treeList) {
+            tree.AskForParameters();
+            tree.Print();
         }
+
         Console.ReadKey();
+    }  
+}
+
+public class StaticCharChristmasTree: ChristmasTree {
+    private char predefinedChar { get; set; }
+    public StaticCharChristmasTree(char _predefinedChar) {
+        predefinedChar = _predefinedChar;
+    }
+
+    protected override char AskForTreeChar() {
+        return predefinedChar;
     }
 }
+
+public class ChristmasTree
+{
+    private int Height { get; set; }
+    private char TreeChar { get; set; }
+
+    public void Print()
+    {
+        for (int i = 0; i < Height; i++)
+        {
+            string ile = new string(TreeChar, i + 1);
+            int spacja = (Height - i);
+            string move = new string(' ', spacja);
+
+            int right = i;
+            string newright = new string(TreeChar, right);
+            Console.WriteLine(move + ile + newright);
+        }
+    }
+
+    protected virtual char AskForTreeChar() {
+        Console.WriteLine("Jakigo znaku chcesz użyć do rysowania choinki? (*, #)");
+        while (true)
+        {
+            var selectedChar = Console.ReadKey().KeyChar;
+            if (selectedChar == '*' || selectedChar == '#') {
+                return selectedChar;
+            }
+        }
+    }
+
+    public int AskForHeight()
+    {
+        Console.WriteLine();
+        Console.WriteLine("Jak wysoka ma być choinka?");
+        var userInput = Console.ReadLine();
+        bool isNumber = int.TryParse(userInput, out var height);
+
+        return height;
+    }
+
+    public void AskForParameters()
+    {
+        TreeChar = AskForTreeChar();
+
+        height = AskForHeight();
+    }
+    
+}
+
